@@ -4,6 +4,7 @@ import HeaderComp from './Header-Comp/header'
 import MainControlPanel from './MainControlPanel/main-control-panel'
 import { useOpenClose } from './Hooks/Open-Close-Hooks'
 
+
 export default function App() {
   const [isOpenTheme, clickHandler] = useOpenClose()
 
@@ -17,7 +18,6 @@ export default function App() {
        ${isOpenTheme ? "bg-slate-700" : "bg-gray-100"} ${isOpenTheme ? "text-stone-400" : "text-black"} `}>
 
       <HeaderComp isOpenTheme={isOpenTheme} clickHandler={clickHandler} />
-
 
 
     </div>
