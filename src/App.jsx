@@ -1,35 +1,34 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
 import './App.css'
+import HeaderComp from './Header-Comp/header'
+import MainControlPanel from './MainControlPanel/main-control-panel'
+import { useOpenClose } from './Hooks/Open-Close-Hooks'
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
+  const [isOpenTheme, clickHandler] = useOpenClose()
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+
+  return (<>
+
+
+    <MainControlPanel />
+
+    <div className={`flex flex-col  flex-7 border-solid border-2s w-screen 
+       ${isOpenTheme ? "bg-slate-700" : "bg-gray-100"} ${isOpenTheme ? "text-stone-400" : "text-black"} `}>
+
+      <HeaderComp isOpenTheme={isOpenTheme} clickHandler={clickHandler} />
+
+
+
+    </div>
+
+
+
+
+
+
+
+  </>
   )
 }
 
-export default App
