@@ -1,4 +1,4 @@
-
+import React from 'react';
 import './App.css'
 import HeaderComp from './Header-Comp/header'
 import MainControlPanel from './MainControlPanel/main-control-panel'
