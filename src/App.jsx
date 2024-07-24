@@ -3,7 +3,7 @@ import './App.css'
 import HeaderComp from './Header-Comp/header'
 import MainControlPanel from './MainControlPanel/main-control-panel'
 import { useOpenClose } from './Hooks/Open-Close-Hooks'
-import { VictoryChart, VictoryClipContainer, VictoryArea } from 'victory';
+import { VictoryChart,  VictoryArea } from 'victory';
 
 export default function App() {
   const [isOpenTheme, clickHandler] = useOpenClose()
@@ -27,7 +27,7 @@ export default function App() {
         theme={{
           axis: {
             style: {
-              tickLabels: { fontSize: 1 } // Yazı boyutunu 3 piksel olarak ayarla
+              tickLabels: { fontSize: 0.6 } // Yazı boyutunu 3 piksel olarak ayarla
             }
           }
         }}
@@ -35,7 +35,7 @@ export default function App() {
       >
         <VictoryArea
           style={{
-            data: { stroke: "#c43a31", strokeWidth: 1, strokeLinecap: "round" }, // Çizgi kalınlığını 1 piksel olarak ayarla
+            data: { stroke: "#c43a31", strokeWidth: 0.3, strokeLinecap: "round" }, // Çizgi kalınlığını 1 piksel olarak ayarla
             labels: { fontSize: 0.5 } // Etiket boyutunu 3 piksel olarak ayarla
           }}
           data={[
@@ -50,6 +50,9 @@ export default function App() {
           }}
         />
       </VictoryChart>
+
+
+      <p>SAMET</p>
 
 
 
