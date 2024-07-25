@@ -1,7 +1,7 @@
 
 
 
-const messagesData = [{
+export const messagesData = [{
     path: "./public/user/user-01.png",
     username: "Rober Jhon",
     message: "Can you share your offer ?",
@@ -41,7 +41,7 @@ const messagesData = [{
 
 
 
-export default function HeaderMesssagesArea() {
+export  function HeaderMesssagesArea() {
     return (<>
 
 
@@ -67,20 +67,14 @@ export default function HeaderMesssagesArea() {
                         </div>
                     </div>
                 ))}
-
-
-
-
-
-
-
-
-
-
-
-
-
-            </div>
+          
+          
+          
+           </div>
+        
+        
+        
+        
         </div>
 
 

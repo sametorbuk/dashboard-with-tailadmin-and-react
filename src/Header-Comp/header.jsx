@@ -7,7 +7,7 @@ import { faCommentDots } from "@fortawesome/free-solid-svg-icons"
 import NotificationDiv from "../notification/notification-div"
 import { useOpenClose } from "../Hooks/Open-Close-Hooks"
 import { useEffect } from "react"
-import HeaderMesssagesArea from "../notification/messages"
+import { HeaderMesssagesArea } from "../notification/messages"
 
 
 
@@ -50,7 +50,7 @@ export default function HeaderComp(props) {
 
     return (<>
 
-        <div className="flex mt-6 gap-3.5 items-center">
+        <div className="flex mt-6 gap-3.5 items-center  mb-5" >
 
 
 

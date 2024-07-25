@@ -5,21 +5,22 @@ import { faTableCellsLarge, faCalendarDays, faUser, faListCheck, faChartSimple, 
 import { useOpenClose } from '../Hooks/Open-Close-Hooks';
 
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
-
-
+import { faWpforms } from "@fortawesome/free-brands-svg-icons"
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
 export default function MainControlPanel() {
     const [isOpen, clickHandler] = useOpenClose()
 
     const [isOpen2, clickHandler2] = useOpenClose()
 
-
+    const [isOpenForms, clickHandler3] = useOpenClose()
+    const history = useHistory()
 
     return (<>
 
-        <div className="flex flex-col items-center bg-rose-800 text-stone-50 flex-3 ">
+        <div className="flex flex-col items-center bg-rose-800 text-stone-50 flex-3  ">
 
-            <div className="flex my-8 items-center">
+            <div onClick={() => { history.push("/") }} className="flex my-8 items-center cursor-pointer">
                 <FontAwesomeIcon className="text-3xl" icon={faChartSimple} />
 
                 <h3 className="text-3xl font-bold">WiT Control</h3>
@@ -58,7 +59,7 @@ export default function MainControlPanel() {
 
 
 
-                <button className="text-xl"><FontAwesomeIcon icon={faCalendarDays} /> Calendar</button>
+                <button onClick={() => { history.push("/calendar-page") }} className="text-xl"><FontAwesomeIcon icon={faCalendarDays} /> Calendar</button>
                 <button className="text-xl"> <FontAwesomeIcon icon={faUser} /> Profile</button>
 
 
@@ -88,8 +89,23 @@ export default function MainControlPanel() {
 
 
 
+                <div className='flex items-center w-full justify-around'>
+                    <FontAwesomeIcon className="text-xl" icon={faWpforms} />
+                    <button onClick={clickHandler3} className="text-xl"> Forms</button>
 
-                <button className="text-xl"> Forms</button>
+                    {isOpenForms && <FontAwesomeIcon className='mx-7' icon={faChevronDown} />}
+                    {!isOpenForms && <FontAwesomeIcon className='mx-7' icon={faChevronLeft} />}
+                </div>
+
+                {isOpenForms && <div className='flex flex-col'>
+
+                    <button>Form Elements</button>
+                    <button>Form Layout</button>
+                </div>}
+
+
+
+
 
             </div>
         </div>
