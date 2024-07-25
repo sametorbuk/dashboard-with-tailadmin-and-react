@@ -13,7 +13,7 @@ export const useOpenClose = () => {
         setIsOpen(!isOpen)
     }
 
-    return [isOpen, clickHandler]
+    return [isOpen, clickHandler, setIsOpen]
 
 
 

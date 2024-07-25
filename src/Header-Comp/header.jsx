@@ -6,12 +6,47 @@ import { faBell } from "@fortawesome/free-solid-svg-icons"
 import { faCommentDots } from "@fortawesome/free-solid-svg-icons"
 import NotificationDiv from "../notification/notification-div"
 import { useOpenClose } from "../Hooks/Open-Close-Hooks"
+import { useEffect } from "react"
+import HeaderMesssagesArea from "../notification/messages"
+
+
+
 
 
 export default function HeaderComp(props) {
     const { isOpenTheme, clickHandler } = props
 
-    const [notifIsOpen, notificationClickHandler] = useOpenClose()
+    const [notifIsOpen, notificationClickHandler, setNotifIsOpen] = useOpenClose()
+    const [messageIsOpen, messageClickHandler, setMessageIsopen] = useOpenClose()
+
+    const handleClickOutside = (event) => {
+        if (
+            event.target.closest('.notifDiv') === null && event.target.closest(".messagesDiv") === null
+
+        ) {
+            setMessageIsopen(false)
+            setNotifIsOpen(false)
+
+        }
+    };
+
+    useEffect(() => {
+        if (notifIsOpen || messageIsOpen) {
+            document.addEventListener('mousedown', handleClickOutside);
+
+        } else {
+            document.removeEventListener('mousedown', handleClickOutside);
+
+        }
+
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+
+
+        };
+    }, [notifIsOpen, messageIsOpen]);
+
+
 
     return (<>
 
@@ -46,16 +81,10 @@ export default function HeaderComp(props) {
 
 
 
+            <button onClick={messageClickHandler}><FontAwesomeIcon icon={faCommentDots} /></button>
 
 
-
-
-
-
-            <button><FontAwesomeIcon icon={faCommentDots} /></button>
-
-
-
+            {messageIsOpen && <HeaderMesssagesArea />}
 
 
 

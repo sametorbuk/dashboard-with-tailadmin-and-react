@@ -1,10 +1,11 @@
 
 import './App.css'
 import HeaderComp from './Header-Comp/header'
-import MainControlPanel from './MainControlPanel/main-control-panel'
+
 import { useOpenClose } from './Hooks/Open-Close-Hooks'
-import { VictoryChart, VictoryArea } from 'victory';
-import NotificationDiv from './notification/notification-div';
+import MainControlPanel from './MainControlPanel/main-control-panel'
+
+
 
 export default function App() {
   const [isOpenTheme, clickHandler] = useOpenClose()
@@ -20,8 +21,22 @@ export default function App() {
 
       <HeaderComp isOpenTheme={isOpenTheme} clickHandler={clickHandler} />
 
+      <div className='flex justify-around'>
 
-      
+
+
+
+
+
+
+
+
+
+      </div>
+
+
+
+
 
 
 

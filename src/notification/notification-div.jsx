@@ -10,7 +10,8 @@ export default function NotificationDiv() {
     return (<>
 
 
-        <div className="flex flex-col bg-[gray] w-56 absolute left-[50rem] top-[5rem] p-5 w-72 gap-2.5">
+        <div className="notifDiv  flex flex-col bg-[white] w-56 absolute 
+        left-[50rem] top-[5rem] p-5 w-72 gap-2.5 rounded-lg">
             <p>Notification</p>
 
 
@@ -33,24 +34,7 @@ export default function NotificationDiv() {
 
                 <p className="borderNotification" >There are many variations of passages of Lorem Ipsum available, but the majority have suffered</p>
 
-
-
-
-
-
             </div>
-
-
-
-
-
-
-
-
-
-
-
-
         </div>
 
 
