@@ -4,12 +4,14 @@ import { faMagnifyingGlass, faMoon } from "@fortawesome/free-solid-svg-icons"
 import { faSun } from "@fortawesome/free-solid-svg-icons"
 import { faBell } from "@fortawesome/free-solid-svg-icons"
 import { faCommentDots } from "@fortawesome/free-solid-svg-icons"
-
+import NotificationDiv from "../notification/notification-div"
+import { useOpenClose } from "../Hooks/Open-Close-Hooks"
 
 
 export default function HeaderComp(props) {
     const { isOpenTheme, clickHandler } = props
 
+    const [notifIsOpen, notificationClickHandler] = useOpenClose()
 
     return (<>
 
@@ -36,8 +38,27 @@ export default function HeaderComp(props) {
 
 
 
-            <button><FontAwesomeIcon icon={faBell} /></button>
+            <button onClick={notificationClickHandler}><FontAwesomeIcon icon={faBell} /></button>
+
+
+
+            {notifIsOpen && <NotificationDiv />}
+
+
+
+
+
+
+
+
+
             <button><FontAwesomeIcon icon={faCommentDots} /></button>
+
+
+
+
+
+
 
 
 

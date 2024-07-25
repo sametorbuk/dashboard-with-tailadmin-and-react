@@ -4,3 +4,7 @@
 
 
 
+.borderNotification {
+
+    @apply  border border-y-stone-400
+}
