@@ -3,6 +3,7 @@ import './App.css'
 import HeaderComp from './Header-Comp/header'
 
 import { useOpenClose } from './Hooks/Open-Close-Hooks'
+import InfoChart from './Info Chart/info-chart'
 import MainControlPanel from './MainControlPanel/main-control-panel'
 
 
@@ -24,7 +25,7 @@ export default function App() {
       <div className='flex justify-around'>
 
 
-
+        <InfoChart isOpenTheme={isOpenTheme} />
 
 
 
