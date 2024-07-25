@@ -12,7 +12,7 @@ export default function InfoChart(props) {
 
 
         <div className="flex flex-col p-4 text-2xl ">
-            <FontAwesomeIcon className="my-8 w-10 " icon={faEye} style={{ color: "#8a0000", }} />
+            <FontAwesomeIcon className={` my-8 w-10  ${isOpenTheme ? "text-gray-300" : "text-rose-800"}  `} icon={faEye} />
             <p className="font-bold">$3.456 K</p>
 
             <div className="flex justify-between items-center font">
