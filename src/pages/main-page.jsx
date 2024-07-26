@@ -96,7 +96,7 @@ export default function MainContent(props) {
 
 
 
-        <div className="flex flex-col p-6  border-stone-950 border h-screen">
+        <div className="flex flex-col p-6   border h-screen">
             <div className="flex justify-between">
                 <div className={`flex flex-col p-6  rounded-lg  ${isOpenTheme ? "bg-slate-600" : "bg-slate-200"}`}>
                     <h2 className="font-bold mb-6">TOP CHANNELS</h2>
