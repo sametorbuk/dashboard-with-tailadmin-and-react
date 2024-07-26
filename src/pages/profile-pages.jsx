@@ -27,7 +27,7 @@ export default function ProfilePage() {
                 display: "none"
             }} />
 
-        <div className="flex flex-col bg-stone w-[78.5vw] h-screen p-9 items-center">
+        <div style={{ height: "initial" }} className="flex flex-col bg-stone w-[78.5vw] h-screen p-9 items-center gap-4">
             <img className="w-[78.5vw]  h-64" src="./public/background--profile.jpg" alt="" />
             <img className="absolute w-[12rem] top-[18rem]  rounded-full" src="./public/profile-photo.jpg" alt="" />
 
@@ -55,6 +55,19 @@ export default function ProfilePage() {
 
 
             <p className="font-bold">About me</p>
+
+            <p>A curious and enthusiastic developer who is constantly
+                improving himself and trying to keep up with technology</p>
+
+            <p className="font-bold">Follow me on</p>
+
+            <div className="flex gap-4">
+
+                <img className="w-8 h-8" src="./public/brand/brand-02.svg" alt="" />
+                <img className="w-8 h-8" src="./public/brand/brand-03.svg" alt="" />
+
+
+            </div>
 
         </div>
 

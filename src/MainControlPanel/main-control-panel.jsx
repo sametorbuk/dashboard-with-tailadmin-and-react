@@ -1,7 +1,7 @@
 
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTableCellsLarge, faCalendarDays, faUser, faListCheck, faChartSimple, faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import { faTableCellsLarge, faCalendarDays, faUser, faListCheck, faChartSimple, faChevronDown, faGear } from "@fortawesome/free-solid-svg-icons";
 import { useOpenClose } from '../Hooks/Open-Close-Hooks';
 
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
@@ -18,7 +18,7 @@ export default function MainControlPanel() {
 
     return (<>
 
-        <div className="flex flex-col items-center bg-rose-800 text-stone-50 flex-3  ">
+        <div style={{ height: "inital" }} className="flex flex-col items-center bg-rose-800 text-stone-50 flex-3">
 
             <div onClick={() => { history.push("/") }} className="flex my-8 items-center cursor-pointer">
                 <FontAwesomeIcon className="text-3xl" icon={faChartSimple} />
@@ -28,11 +28,11 @@ export default function MainControlPanel() {
 
             </div>
 
-            <p className="mr-44 font-bold">Menu</p>
+            <p className="mr-44 font-bold mb-4">Menu</p>
 
 
 
-            <div className="flex flex-col  w-64 border-solid border-pink-700 border-2 gap-8 items-center ">
+            <div className="flex flex-col  w-64 gap-8 items-center ">
 
 
                 <div onClick={clickHandler} className='flex items-center w-full justify-around'>
@@ -58,10 +58,14 @@ export default function MainControlPanel() {
 
 
 
-
-                <button onClick={() => { history.push("/calendar-page") }} className="text-xl"><FontAwesomeIcon icon={faCalendarDays} /> Calendar</button>
-
-                <button onClick={() => { history.push("/profile") }} className="text-xl"> <FontAwesomeIcon icon={faUser} /> Profile</button>
+                <div className='flex items-center w-[14.2rem]'>
+                    <FontAwesomeIcon className='text-xl ' icon={faCalendarDays} />
+                    <button onClick={() => { history.push("/calendar-page") }}
+                        className="text-xl ml-[2rem] "> Calendar</button>
+                </div>
+               
+                <button onClick={() => { history.push("/profile") }}
+                    className="text-xl"> <FontAwesomeIcon icon={faUser} /> Profile</button>
 
 
 
@@ -105,6 +109,16 @@ export default function MainControlPanel() {
                 </div>}
 
 
+
+
+
+
+                <div className='flex items-center w-full '>
+                    <FontAwesomeIcon className="text-xl ml-[1.2rem]" icon={faGear} />
+                    <button className="text-xl ml-[2.4rem]"> Settings</button>
+
+
+                </div>
 
 
 
