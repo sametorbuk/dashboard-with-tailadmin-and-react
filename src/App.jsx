@@ -9,6 +9,7 @@ import MainControlPanel from './MainControlPanel/main-control-panel'
 import MainContent from './pages/dashboard-main-page'
 import { Route } from 'react-router-dom/cjs/react-router-dom'
 import MyCalendar from './calendar/my-calendar'
+import ProfilePage from './pages/profile-pages'
 
 
 
@@ -53,6 +54,13 @@ export default function App() {
           <Route path="/calendar-page">
 
             <MyCalendar />
+
+
+          </Route>
+
+          <Route path="/profile">
+
+            <ProfilePage />
 
 
           </Route>

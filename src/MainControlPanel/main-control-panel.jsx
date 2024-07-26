@@ -60,7 +60,8 @@ export default function MainControlPanel() {
 
 
                 <button onClick={() => { history.push("/calendar-page") }} className="text-xl"><FontAwesomeIcon icon={faCalendarDays} /> Calendar</button>
-                <button className="text-xl"> <FontAwesomeIcon icon={faUser} /> Profile</button>
+
+                <button onClick={() => { history.push("/profile") }} className="text-xl"> <FontAwesomeIcon icon={faUser} /> Profile</button>
 
 
 
