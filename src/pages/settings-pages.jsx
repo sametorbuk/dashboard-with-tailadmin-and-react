@@ -18,8 +18,8 @@ export default function SettingsPage() {
     return (<>
 
 
-        <form>
-            <div className="flex flex-col">
+        <form onSubmit={handleSubmit}>
+            <div className="flex flex-col w-[40vw]">
 
                 <h1 className="text-2xl font-bold">SETTİNGS</h1>
 
@@ -104,7 +104,7 @@ export default function SettingsPage() {
                 )}
 
 
-
+                <button className="flex justify-center rounded bg-primary py-2 px-6 font-medium text-gray hover:bg-opacity-90" type="submit" disabled={!isValid}> Gönder</button>
 
             </div>
         </form>
