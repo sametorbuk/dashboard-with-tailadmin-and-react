@@ -104,7 +104,10 @@ export default function SettingsPage() {
                 )}
 
 
-                <button className="flex justify-center rounded bg-primary py-2 px-6 font-medium text-gray hover:bg-opacity-90" type="submit" disabled={!isValid}> Gönder</button>
+                <button className="flex text-white bg-[#9f2626] 
+                justify-center rounded bg-primary py-2 px-6 
+                font-medium text-gray hover:bg-opacity-90"
+                    type="submit" disabled={!isValid}> Gönder</button>
 
             </div>
         </form>
