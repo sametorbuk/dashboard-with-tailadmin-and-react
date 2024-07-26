@@ -41,18 +41,18 @@ export const messagesData = [{
 
 
 
-export  function HeaderMesssagesArea() {
+export function HeaderMesssagesArea() {
     return (<>
 
 
 
-        <div className="messagesDiv  flex flex-col bg-[white] w-56 absolute left-[55rem] top-[5rem] p-5 w-72 gap-2.5 rounded-lg">
+        <div className="messagesDiv  flex flex-col bg-[white] w-56 absolute z-[3] left-[55rem] top-[5rem] p-5 w-72 gap-2.5 rounded-lg">
             <p>Notification</p>
 
 
 
 
-            <div className="flex flex-col overflow-y-auto h-48 gap-2.5 ">
+            <div className="flex flex-col overflow-y-auto h-64 gap-2.5 ">
 
 
 
@@ -67,14 +67,14 @@ export  function HeaderMesssagesArea() {
                         </div>
                     </div>
                 ))}
-          
-          
-          
-           </div>
-        
-        
-        
-        
+
+
+
+            </div>
+
+
+
+
         </div>
 
 

@@ -35,7 +35,7 @@ export default function MainControlPanel() {
             <div className="flex flex-col  w-64 gap-8 items-center ">
 
 
-                <div onClick={clickHandler} className='flex items-center w-full justify-around'>
+                <div onClick={clickHandler} className='flex items-center w-full justify-around hover:bg-[#5a000061] h-[3rem]'>
                     <FontAwesomeIcon className="text-xl"
                         icon={faTableCellsLarge} />
                     <button onClick={clickHandler} className="text-xl">
@@ -58,21 +58,24 @@ export default function MainControlPanel() {
 
 
 
-                <div className='flex items-center w-[14.2rem]'>
-                    <FontAwesomeIcon className='text-xl ' icon={faCalendarDays} />
+                <div className='flex items-center w-[16.2rem] hover:bg-[#5a000061] h-[3rem]'>
+                    <FontAwesomeIcon className='text-xl ml-[1.3rem] ' icon={faCalendarDays} />
                     <button onClick={() => { history.push("/calendar-page") }}
                         className="text-xl ml-[2rem] "> Calendar</button>
                 </div>
-               
-                <button onClick={() => { history.push("/profile") }}
-                    className="text-xl"> <FontAwesomeIcon icon={faUser} /> Profile</button>
+
+
+                <div className='flex items-center w-[16.2rem] hover:bg-[#5a000061] h-[3rem] '>
+                    <FontAwesomeIcon className='text-xl ml-[1.3rem]' icon={faUser} />
+                    <button onClick={() => { history.push("/profile") }}
+                        className="text-xl ml-[2rem]">  Profile</button>
+                </div>
 
 
 
 
-
-                <div onClick={clickHandler2} className='flex items-center w-full justify-around'>
-                    <FontAwesomeIcon className="text-xl" icon={faListCheck} />
+                <div onClick={clickHandler2} className='flex items-center w-full justify-around hover:bg-[#5a000061] h-[3rem]'>
+                    <FontAwesomeIcon className="text-xl right-1 relative" icon={faListCheck} />
                     <button className="text-xl"> Task</button>
                     {isOpen2 && <FontAwesomeIcon className='mx-7' icon={faChevronDown} />}
                     {!isOpen2 && <FontAwesomeIcon className='mx-7' icon={faChevronLeft} />}
@@ -94,7 +97,7 @@ export default function MainControlPanel() {
 
 
 
-                <div className='flex items-center w-full justify-around'>
+                <div className='flex items-center w-full justify-around hover:bg-[#5a000061] h-[3rem]'>
                     <FontAwesomeIcon className="text-xl" icon={faWpforms} />
                     <button onClick={clickHandler3} className="text-xl"> Forms</button>
 
@@ -102,7 +105,7 @@ export default function MainControlPanel() {
                     {!isOpenForms && <FontAwesomeIcon className='mx-7' icon={faChevronLeft} />}
                 </div>
 
-                {isOpenForms && <div className='flex flex-col'>
+                {isOpenForms && <div className='flex flex-col '>
 
                     <button>Form Elements</button>
                     <button>Form Layout</button>
@@ -113,7 +116,7 @@ export default function MainControlPanel() {
 
 
 
-                <div className='flex items-center w-full '>
+                <div onClick={() => { history.push("/settings") }} className='flex items-center w-full hover:bg-[#5a000061] h-[3rem] '>
                     <FontAwesomeIcon className="text-xl ml-[1.2rem]" icon={faGear} />
                     <button className="text-xl ml-[2.4rem]"> Settings</button>
 

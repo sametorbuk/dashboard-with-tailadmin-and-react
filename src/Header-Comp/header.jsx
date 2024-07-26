@@ -59,21 +59,21 @@ export default function HeaderComp(props) {
 
 
 
-            {!isOpenTheme && <div onClick={clickHandler} className="flex items-center cursor-pointer">
+            {!isOpenTheme && <div onClick={clickHandler} className="flex items-center cursor-pointer text-[1.1rem]">
                 <p>Dark</p>
                 <FontAwesomeIcon icon={faMoon} style={{ color: "#FFD43B", }} />
             </div>}
 
 
 
-            {isOpenTheme && <div onClick={clickHandler} className="flex items-center cursor-pointer">
+            {isOpenTheme && <div onClick={clickHandler} className="flex items-center cursor-pointer text-[1.1rem]">
                 <p>Light</p>
                 <FontAwesomeIcon icon={faSun} style={{ color: "#FFD43B", }} />
             </div>}
 
 
 
-            <button onClick={notificationClickHandler}><FontAwesomeIcon icon={faBell} /></button>
+            <button className="text-[1.5rem]" onClick={notificationClickHandler}><FontAwesomeIcon icon={faBell} /></button>
 
 
 
@@ -81,7 +81,7 @@ export default function HeaderComp(props) {
 
 
 
-            <button onClick={messageClickHandler}><FontAwesomeIcon icon={faCommentDots} /></button>
+            <button className="text-[1.5rem]" onClick={messageClickHandler}><FontAwesomeIcon icon={faCommentDots} /></button>
 
 
             {messageIsOpen && <HeaderMesssagesArea />}
