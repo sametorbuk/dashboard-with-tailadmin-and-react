@@ -34,9 +34,7 @@ export default function App() {
       <div className='flex flex-col'>
 
         <Switch>
-
-
-
+          
           <Route path="/" exact>
             <MainContent isOpenTheme={isOpenTheme} />
           </Route>
