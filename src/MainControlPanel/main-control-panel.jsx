@@ -20,7 +20,7 @@ export default function MainControlPanel() {
 
         <div style={{ height: "inital" }} className="flex flex-col items-center bg-rose-800 text-stone-50 flex-3">
 
-            <div onClick={() => { history.push("/") }} className="flex my-8 items-center cursor-pointer">
+            <div onClick={() => { history.push("/main-page") }} className="flex my-8 items-center cursor-pointer">
                 <FontAwesomeIcon className="text-3xl" icon={faChartSimple} />
 
                 <h3 className="text-3xl font-bold">WiT Control</h3>
