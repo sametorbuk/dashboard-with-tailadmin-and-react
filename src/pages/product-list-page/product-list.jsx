@@ -2,13 +2,19 @@
 
 
 import { useState } from "react"
-
+import ProductInfoModal from "./product-info";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 
 
 export default function ProductListPage(props) {
     const { currentBookData } = props
+
+    const [productInfoModal, setProductInfoModal] = useState(false);
+
+    const toggle = () => setProductInfoModal(!productInfoModal);
+
 
 
     return (<>
@@ -60,7 +66,7 @@ export default function ProductListPage(props) {
                                 </td>
                                 <td className="border-b border-[#eee] py-5 px-4 dark:border-strokedark">
                                     <div className="flex items-center space-x-3.5">
-                                        <button className="hover:text-primary">
+                                        <button onClick={toggle} className="hover:text-primary">
                                             <svg
                                                 className="fill-current"
                                                 width="18"
@@ -79,6 +85,17 @@ export default function ProductListPage(props) {
                                                 />
                                             </svg>
                                         </button>
+
+
+
+                                        {productInfoModal && <ProductInfoModal productInfoModal={productInfoModal}
+                                            toggle={toggle} />}
+
+
+
+
+
+
                                         <button className="hover:text-primary">
                                             <svg
                                                 className="fill-current"
