@@ -14,6 +14,7 @@ import SettingsPage from './pages/settings-pages'
 import { useLocation } from "react-router-dom"
 import LoginPage from './login-page/login-page'
 import RedirectPage from './pages/redirect-page/redirect-page'
+import ProductListPage from './pages/product-list-page/product-list'
 
 
 
@@ -26,13 +27,13 @@ export default function App() {
   const isLoginPage = location.pathname === '/';
   const isRedirectPage = location.pathname === "/redirect-page"
   const [timeRedirectPage, setTimeRedirectPage] = useState(3)
-
+  const [currentBookData, setCurrentBookData] = useState([])
 
 
 
   return (<>
 
-    {(!isLoginPage && !isRedirectPage) && <MainControlPanel />}
+    {(!isLoginPage && !isRedirectPage) && <MainControlPanel setCurrentBookData={setCurrentBookData} />}
 
     <div className={`${(!isLoginPage && !isRedirectPage) ? "block" : "flex"}  flex-col  flex-7 border-solid border-2s w-screen 
        ${isOpenTheme ? "bg-slate-700" : "bg-gray-100"} ${isOpenTheme ? "text-stone-400" : "text-black"} `}>
@@ -49,13 +50,9 @@ export default function App() {
 
 
           <Route path="/redirect-page">
-
             <RedirectPage
               timeRedirectPage={timeRedirectPage}
-
             />
-
-
           </Route>
 
 
@@ -79,13 +76,13 @@ export default function App() {
 
 
           <Route path="/settings">
-
             <SettingsPage />
-
-
           </Route>
 
+          <Route path="/product-list-page">
 
+            <ProductListPage currentBookData={currentBookData} />
+          </Route>
 
 
         </Switch>

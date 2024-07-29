@@ -3,16 +3,21 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTableCellsLarge, faCalendarDays, faUser, faListCheck, faChartSimple, faChevronDown, faGear, faBook } from "@fortawesome/free-solid-svg-icons";
 import { useOpenClose } from '../Hooks/Open-Close-Hooks';
-
+import { useState } from 'react';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import { faWpforms } from "@fortawesome/free-brands-svg-icons"
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+import ProductAddComp from '../pages/product-list-page/add-comp';
 
-export default function MainControlPanel() {
+export default function MainControlPanel(props) {
+    const { setCurrentBookData } = props
     const [isOpen, clickHandler] = useOpenClose()
     const [isOpen2, clickHandler2] = useOpenClose()
     const [isOpenForms, clickHandler3] = useOpenClose()
-    const [isOpenAddProduct, clickHandlerAddProduct, setIsOpenAddProduct] = useOpenClose()
+    const [isOpenAddProduct, clickHandlerAddProduct] = useOpenClose()
+
+    const [addBookModal, setAddBookModal] = useState(false);
+    const toggle = () => setAddBookModal(!addBookModal);
 
     const history = useHistory()
 
@@ -70,9 +75,12 @@ export default function MainControlPanel() {
                 {isOpenAddProduct && <div className='flex flex-col gap-[1rem]'>
 
 
-                    <button className='hover:bg-[#5a000061] w-[16rem]'>Book List</button>
-                    <button className='hover:bg-[#5a000061] w-[16rem]'>Add Book</button>
+                    <button onClick={() => { history.push("/product-list-page") }} className='hover:bg-[#5a000061] w-[16rem]'>Book List</button>
+                    <button onClick={toggle} className='hover:bg-[#5a000061] '>Add Book</button>
 
+                    {addBookModal && <ProductAddComp toggle={toggle}
+                        setAddBookModal={setAddBookModal} addBookModal={addBookModal}
+                        setCurrentBookData={setCurrentBookData} />}
 
 
                 </div>}
