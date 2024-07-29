@@ -10,7 +10,7 @@ import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import ProductAddComp from '../pages/product-list-page/add-comp';
 
 export default function MainControlPanel(props) {
-    const { setCurrentBookData } = props
+    const { setCurrentBookData , currentBookData } = props
     const [isOpen, clickHandler] = useOpenClose()
     const [isOpen2, clickHandler2] = useOpenClose()
     const [isOpenForms, clickHandler3] = useOpenClose()
@@ -80,7 +80,7 @@ export default function MainControlPanel(props) {
 
                     {addBookModal && <ProductAddComp toggle={toggle}
                         setAddBookModal={setAddBookModal} addBookModal={addBookModal}
-                        setCurrentBookData={setCurrentBookData} />}
+                        setCurrentBookData={setCurrentBookData} currentBookData={currentBookData} />}
 
 
                 </div>}

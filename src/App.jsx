@@ -17,7 +17,9 @@ import RedirectPage from './pages/redirect-page/redirect-page'
 import ProductListPage from './pages/product-list-page/product-list'
 
 
+const storageData = localStorage.getItem("currentbookdata")
 
+const initialValue = storageData ? JSON.parse(storageData) : []
 
 
 
@@ -27,13 +29,14 @@ export default function App() {
   const isLoginPage = location.pathname === '/';
   const isRedirectPage = location.pathname === "/redirect-page"
   const [timeRedirectPage, setTimeRedirectPage] = useState(3)
-  const [currentBookData, setCurrentBookData] = useState([])
+  const [currentBookData, setCurrentBookData] = useState(initialValue)
 
 
 
   return (<>
 
-    {(!isLoginPage && !isRedirectPage) && <MainControlPanel setCurrentBookData={setCurrentBookData} />}
+    {(!isLoginPage && !isRedirectPage) && <MainControlPanel setCurrentBookData={setCurrentBookData}
+      currentBookData={currentBookData} />}
 
     <div className={`${(!isLoginPage && !isRedirectPage) ? "block" : "flex"}  flex-col  flex-7 border-solid border-2s w-screen 
        ${isOpenTheme ? "bg-slate-700" : "bg-gray-100"} ${isOpenTheme ? "text-stone-400" : "text-black"} `}>
