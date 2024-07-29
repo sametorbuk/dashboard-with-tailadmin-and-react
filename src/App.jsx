@@ -4,7 +4,7 @@ import './App.css'
 import HeaderComp from './Header-Comp/header'
 
 import { useOpenClose } from './Hooks/Open-Close-Hooks'
-
+import { useState } from 'react'
 import MainControlPanel from './MainControlPanel/main-control-panel'
 import MainContent from './pages/main-page'
 import { Route } from 'react-router-dom/cjs/react-router-dom'
@@ -13,7 +13,8 @@ import ProfilePage from './pages/profile-pages'
 import SettingsPage from './pages/settings-pages'
 import { useLocation } from "react-router-dom"
 import LoginPage from './login-page/login-page'
-import { useEffect } from 'react'
+import RedirectPage from './redirect-page/redirect-page'
+
 
 
 
@@ -23,6 +24,9 @@ export default function App() {
   const [isOpenTheme, clickHandler] = useOpenClose()
   const location = useLocation();
   const isLoginPage = location.pathname === '/';
+  const isRedirectPage = location.pathname === "/redirect-page"
+  const [timeRedirectPage, setTimeRedirectPage] = useState(3)
+
   const history = useHistory()
 
 
@@ -36,25 +40,32 @@ export default function App() {
 
 
 
-    {!isLoginPage && <MainControlPanel />}
+    {(!isLoginPage && !isRedirectPage) && <MainControlPanel />}
 
-    <div className={`flex flex-col  flex-7 border-solid border-2s w-screen 
+    <div className={`${(!isLoginPage && !isRedirectPage) ? "block" : "flex"}  flex-col  flex-7 border-solid border-2s w-screen 
        ${isOpenTheme ? "bg-slate-700" : "bg-gray-100"} ${isOpenTheme ? "text-stone-400" : "text-black"} `}>
 
-      {!isLoginPage && <HeaderComp isOpenTheme={isOpenTheme} clickHandler={clickHandler} />}
+      {(!isLoginPage && !isRedirectPage) && <HeaderComp isOpenTheme={isOpenTheme} clickHandler={clickHandler} />}
 
-      <div className='flex flex-col'>
+      <div className={` flex-col ${(!isLoginPage && !isRedirectPage) ? "block" : "flex"}  `}>
 
         <Switch>
-
-
           <Route path="/" exact>
+            <LoginPage
+              setTimeRedirectPage={setTimeRedirectPage} />
+          </Route>
 
-            <LoginPage />
 
+          <Route path="/redirect-page">
+
+            <RedirectPage
+              timeRedirectPage={timeRedirectPage}
+
+            />
 
 
           </Route>
+
 
 
 
