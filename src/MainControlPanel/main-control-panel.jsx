@@ -1,7 +1,7 @@
 
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTableCellsLarge, faCalendarDays, faUser, faListCheck, faChartSimple, faChevronDown, faGear } from "@fortawesome/free-solid-svg-icons";
+import { faTableCellsLarge, faCalendarDays, faUser, faListCheck, faChartSimple, faChevronDown, faGear, faBook } from "@fortawesome/free-solid-svg-icons";
 import { useOpenClose } from '../Hooks/Open-Close-Hooks';
 
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
@@ -10,10 +10,10 @@ import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
 export default function MainControlPanel() {
     const [isOpen, clickHandler] = useOpenClose()
-
     const [isOpen2, clickHandler2] = useOpenClose()
-
     const [isOpenForms, clickHandler3] = useOpenClose()
+    const [isOpenAddProduct, clickHandlerAddProduct, setIsOpenAddProduct] = useOpenClose()
+
     const history = useHistory()
 
     return (<>
@@ -54,6 +54,48 @@ export default function MainControlPanel() {
 
 
                 </div>}
+
+
+
+
+                <div onClick={clickHandlerAddProduct} className='flex items-center w-full justify-around hover:bg-[#5a000061] h-[3rem]'>
+                    <FontAwesomeIcon className="text-xl relative left-[0.9rem]"
+                        icon={faBook} />
+                    <button onClick={clickHandlerAddProduct} className="text-xl  ">
+                        Product Management</button>
+                    {isOpenAddProduct && <FontAwesomeIcon className='mx-7' icon={faChevronDown} />}
+                    {!isOpenAddProduct && <FontAwesomeIcon className='mx-7' icon={faChevronLeft} />}
+                </div>
+
+                {isOpenAddProduct && <div className='flex flex-col gap-[1rem]'>
+
+
+                    <button className='hover:bg-[#5a000061] w-[16rem]'>Book List</button>
+                    <button className='hover:bg-[#5a000061] w-[16rem]'>Add Book</button>
+
+
+
+                </div>}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

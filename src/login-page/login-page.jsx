@@ -71,7 +71,7 @@ export default function LoginPage(props) {
 
                         <div className="flex flex-col">
                             <label htmlFor="number">Number</label>
-                            <input type="text" id="number" {...register("number", {
+                            <input type="number" id="number" {...register("number", {
                                 required: "Lütfen numaranızı yazın", minLength: {
                                     value: 10,
                                     message: "Telefon numarası 10 karakterden az olamaz"

@@ -1,5 +1,5 @@
 
-import { Switch, useHistory } from 'react-router-dom/cjs/react-router-dom.min'
+import { Switch } from 'react-router-dom/cjs/react-router-dom.min'
 import './App.css'
 import HeaderComp from './Header-Comp/header'
 
@@ -13,7 +13,7 @@ import ProfilePage from './pages/profile-pages'
 import SettingsPage from './pages/settings-pages'
 import { useLocation } from "react-router-dom"
 import LoginPage from './login-page/login-page'
-import RedirectPage from './redirect-page/redirect-page'
+import RedirectPage from './pages/redirect-page/redirect-page'
 
 
 
@@ -27,18 +27,10 @@ export default function App() {
   const isRedirectPage = location.pathname === "/redirect-page"
   const [timeRedirectPage, setTimeRedirectPage] = useState(3)
 
-  const history = useHistory()
+
 
 
   return (<>
-
-
-
-
-
-
-
-
 
     {(!isLoginPage && !isRedirectPage) && <MainControlPanel />}
 
