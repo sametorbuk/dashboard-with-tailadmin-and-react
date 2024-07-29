@@ -17,6 +17,7 @@ function ProductInfoModal(props) {
                     <p>Author: {book.author}</p>
                     <p>Publish Date: {book.publishDate}</p>
                     <p>Page Count: {book.pageCount}</p>
+                    <img src={book["coverImage"]} alt="" />
                 </ModalBody>
                 <ModalFooter>
                     <Button color="primary" onClick={toggle}>
