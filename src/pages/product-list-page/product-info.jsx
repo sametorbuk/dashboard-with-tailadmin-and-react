@@ -14,10 +14,10 @@ function ProductInfoModal(props) {
                 <ModalHeader toggle={toggle}>Modal title</ModalHeader>
                 <ModalBody>
                     <h2>{book.title}</h2>
-                    <p>Author: {book.author}</p>
-                    <p>Publish Date: {book.publishDate}</p>
-                    <p>Page Count: {book.pageCount}</p>
-                    <img src={book["coverImage"]} alt="" />
+                    <p>Yazar: {book.author}</p>
+                    <p>Yayınlanma Tarihi: {book.publishDate}</p>
+                    <p>Sayfa Sayısı: {book.pageCount}</p>
+                    <img className='w-[10rem]' src={book["coverImage"]} alt="" />
                 </ModalBody>
                 <ModalFooter>
                     <Button color="primary" onClick={toggle}>
