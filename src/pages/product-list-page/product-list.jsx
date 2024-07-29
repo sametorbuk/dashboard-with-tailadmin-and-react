@@ -41,9 +41,11 @@ export default function ProductListPage(props) {
                     <tbody>
                         {currentBookData.map((book, key) => (
                             <tr key={key}>
-                                <td className="border-b border-[#eee] py-5 px-4 pl-9 dark:border-strokedark xl:pl-11">
+                                {productInfoModal && <ProductInfoModal productInfoModal={productInfoModal}
+                                    toggle={toggle} book={book} />}
+                                {console.log(currentBookData)}                                <td className="border-b border-[#eee] py-5 px-4 pl-9 dark:border-strokedark xl:pl-11">
                                     <h5 className="font-medium text-black dark:text-white">
-                                        {book.author}
+                                        {book.title}
                                     </h5>
                                     <p className="text-sm">${book.pageCount}</p>
                                 </td>
@@ -66,6 +68,7 @@ export default function ProductListPage(props) {
                                 </td>
                                 <td className="border-b border-[#eee] py-5 px-4 dark:border-strokedark">
                                     <div className="flex items-center space-x-3.5">
+
                                         <button onClick={toggle} className="hover:text-primary">
                                             <svg
                                                 className="fill-current"
@@ -88,8 +91,7 @@ export default function ProductListPage(props) {
 
 
 
-                                        {productInfoModal && <ProductInfoModal productInfoModal={productInfoModal}
-                                            toggle={toggle} />}
+
 
 
 
