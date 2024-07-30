@@ -58,7 +58,7 @@ export default function ProductListPage(props) {
                                         <h5 className="font-medium text-black dark:text-white">
                                             {book.title}
                                         </h5>
-                                        <p className="text-sm">${book.pageCount}</p>
+                                        <p className="text-sm">${book.price}</p>
                                     </td>
                                     <td className="border-b border-[#eee] py-5 px-4 dark:border-strokedark">
                                         <p className="text-black dark:text-white">

@@ -22,7 +22,6 @@ const storageData = localStorage.getItem("currentbookdata")
 const initialValue = storageData ? JSON.parse(storageData) : []
 
 
-
 export default function App() {
   const [isOpenTheme, clickHandler] = useOpenClose()
   const location = useLocation();
