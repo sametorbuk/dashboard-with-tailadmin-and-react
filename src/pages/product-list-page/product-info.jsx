@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -11,7 +11,7 @@ function ProductInfoModal(props) {
         <div>
 
             <Modal isOpen={productInfoModal} toggle={toggle} >
-                <ModalHeader toggle={toggle}>Modal title</ModalHeader>
+                <ModalHeader toggle={toggle}>Ürün Bilgisi</ModalHeader>
                 <ModalBody className='flex items-center flex-col gap-[1.5rem]'>
                     <img className='w-[14rem]' src={book["coverImage"]} alt="" />
                     <h2 className='text-2xl font-bold'>{book.title}</h2>

@@ -46,7 +46,7 @@ export function HeaderMesssagesArea() {
 
 
 
-        <div className="messagesDiv  flex flex-col bg-[white] w-56 absolute z-[3] left-[55rem] top-[5rem] p-5 w-72 gap-2.5 rounded-lg">
+        <div className="messagesDiv  flex flex-col bg-[white] w-56 absolute z-[3] left-[55rem] top-[5rem] p-3 w-72 gap-2.5 rounded-lg">
             <p>Notification</p>
 
 

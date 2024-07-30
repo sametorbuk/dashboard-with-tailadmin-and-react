@@ -1,5 +1,5 @@
 
-import React from "react";
+
 
 
 
@@ -11,7 +11,7 @@ export default function NotificationDiv() {
 
 
         <div className="notifDiv  flex flex-col bg-[white] w-56 z-[3] absolute 
-        left-[50rem] top-[5rem] p-5 w-72 gap-2.5 rounded-lg">
+        left-[50rem] top-[5rem] p-3 w-72 gap-2.5 rounded-lg">
             <p>Notification</p>
 
 
