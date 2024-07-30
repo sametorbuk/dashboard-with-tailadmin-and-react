@@ -84,7 +84,7 @@ export default function App() {
 
           <Route path="/product-list-page">
 
-            <ProductListPage currentBookData={currentBookData} />
+            <ProductListPage currentBookData={currentBookData} setCurrentBookData={setCurrentBookData} />
           </Route>
 
 
