@@ -42,8 +42,8 @@ export default function LoginPage(props) {
 
     return (<>
 
-        <div className="flex items-center flex-col bg-[#bbb2b2b0] h-[36.5rem]">
-            <button onClick={() => { history.push("/main-page") }} className="text-4xl" >Lütfen Giriş Yapın</button>
+        <div className="flex items-center flex-col bg-[#bbb2b2b0] h-[36.5rem] ">
+            <button onClick={() => { history.push("/main-page") }} className="text-4xl my-6" >Lütfen Giriş Yapın</button>
 
 
             <form onSubmit={handleSubmit(onSubmit)}>
